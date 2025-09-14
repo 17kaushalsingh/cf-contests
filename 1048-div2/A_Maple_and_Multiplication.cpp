@@ -1,15 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int f(int k, int x)
+int f(int a, int b)
 {
-    while(k--)
-    {
-        if ((x-1)%3 == 0 && ((x-1)/3 % 2) == 1) x = (x-1)/3;
-        else x = 2*x;
-    }
-
-    return x;
+    if (a == b) return 0;
+    int mini = min(a, b);
+    int maxi = max(a, b);
+    if (maxi % mini == 0) return 1;
+    return 2;
 }
 
 int main()
@@ -21,10 +19,10 @@ int main()
     cin >> t;
     while (t--)
     {
-        int k, x;
-        cin >> k >> x;
+        int a, b;
+        cin >> a >> b;
 
-        int ans = f(k, x);
+        int ans = f(a, b);
         cout << ans << endl;
     }
 

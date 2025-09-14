@@ -1,9 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> f(vector<int> &arr, int n)
+vector<int> f(vector<int> &p, int n)
 {
+    vector<int> q(n);
+    for (int i=0; i<n; i++) q[i] = n + 1 - p[i];
 
+    return q;
 }
 
 int main()
